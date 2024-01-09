@@ -1,4 +1,3 @@
-import { resolve } from 'app-root-path'
 import db from '../models/index'
 import bcrypt from 'bcryptjs'
 import e from 'express'
@@ -7,10 +6,7 @@ const salt = bcrypt.genSaltSync(10)
 import jwt from 'jsonwebtoken'
 const Op = db.Sequelize.Op
 const config = require('../configs/auth.config')
-// import Web3 from 'web3';
-// import { CONTACT_ADDRESS, CONTACT_ABI, provider } from './loadContract'
 import { loadContract } from './loadContract'
-// import { contract } from './loadContract'
 require('dotenv').config()
 
 // const contract = loadContract()
@@ -46,7 +42,6 @@ let handleUserLogin = (email, password) => {
                                 expiresIn: 86400, // 1 day
                             },
                         )
-
                         userData.errCode = 0
                         userData.errMessage = 'Ok'
                         delete user.password

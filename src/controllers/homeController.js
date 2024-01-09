@@ -1,5 +1,3 @@
-import { json } from 'body-parser'
-import multer from 'multer'
 import db from '../models/index'
 import CRUDService from '../services/crudService'
 
