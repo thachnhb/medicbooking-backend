@@ -1,36 +1,41 @@
-'use strict'
+'use strict';
+
 module.exports = {
-    up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('Allcodes', {
-            id: {
-                allowNull: false,
-                autoIncrement: true,
-                primaryKey: true,
-                type: Sequelize.INTEGER,
-            },
-            keyMap: {
-                type: Sequelize.STRING,
-            },
-            type: {
-                type: Sequelize.STRING,
-            },
-            valueEn: {
-                type: Sequelize.STRING,
-            },
-            valueVi: {
-                type: Sequelize.STRING,
-            },
-            createdAt: {
-                allowNull: false,
-                type: Sequelize.DATE,
-            },
-            updatedAt: {
-                allowNull: false,
-                type: Sequelize.DATE,
-            },
-        })
-    },
-    down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('Allcodes')
-    },
-}
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Allcodes', {
+        // key: DataTypes.STRING,
+        // type: DataTypes.STRING,
+        // value_En: DataTypes.STRING,
+        // value_Vi: DataTypes.STRING,
+        id: {
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+            type: Sequelize.INTEGER
+          },
+      key: {
+        type: Sequelize.STRING
+      },
+      type: {
+        type: Sequelize.STRING
+      },
+      value_En: {
+        type: Sequelize.STRING
+      },
+      value_Vi: {
+        type: Sequelize.STRING
+      },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE
+      }
+    });
+  },
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Allcodes');
+  }
+};
