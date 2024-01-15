@@ -5,9 +5,9 @@ import initWebRoutes from './route/web'
 import connectDB from './config/connectDB'
 
 require('dotenv').config()
-
+const cors = require('cors')
 let app = express()
-
+app.use(cors())
 //config app
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

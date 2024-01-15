@@ -19,10 +19,10 @@ module.exports = {
       type: {
         type: Sequelize.STRING
       },
-      value_En: {
+      valueEn: {
         type: Sequelize.STRING
       },
-      value_Vi: {
+      valueVi: {
         type: Sequelize.STRING
       },
       createdAt: {
